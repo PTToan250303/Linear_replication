@@ -122,18 +122,25 @@ with mlflow.start_run() as run:
     mlflow.log_param("random_state", 42)
 
     # Sử dụng thư mục tạm thời để ghi lại dữ liệu chia tách vào file CSV
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        train_file = os.path.join(tmpdirname, f"train_data_{run_id}.csv")
-        valid_file = os.path.join(tmpdirname, f"valid_data_{run_id}.csv")
-        test_file = os.path.join(tmpdirname, f"test_data_{run_id}.csv")
+    try:
+        with tempfile.TemporaryDirectory(dir=os.getcwd()) as tmpdirname:  # Thêm tham số dir=os.getcwd()
+            st.write(f"Temporary directory created: {tmpdirname}")
 
-        X_train.to_csv(train_file, index=False)
-        X_valid.to_csv(valid_file, index=False)
-        X_test.to_csv(test_file, index=False)
+            train_file = os.path.join(tmpdirname, f"train_data_{run_id}.csv")
+            valid_file = os.path.join(tmpdirname, f"valid_data_{run_id}.csv")
+            test_file = os.path.join(tmpdirname, f"test_data_{run_id}.csv")
 
-        mlflow.log_artifact(train_file)
-        mlflow.log_artifact(valid_file)
-        mlflow.log_artifact(test_file)
+            X_train.to_csv(train_file, index=False)
+            X_valid.to_csv(valid_file, index=False)
+            X_test.to_csv(test_file, index=False)
+
+            mlflow.log_artifact(train_file)
+            mlflow.log_artifact(valid_file)
+            mlflow.log_artifact(test_file)
+
+        st.write("Files saved and logged successfully.")
+    except Exception as e:
+        st.write(f"Error occurred: {e}")
 
     mlflow.log_metric("mse", mse)
     mlflow.log_metric("accuracy", accuracy)

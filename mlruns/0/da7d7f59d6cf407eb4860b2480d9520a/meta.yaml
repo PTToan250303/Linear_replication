@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/da7d7f59d6cf407eb4860b2480d9520a/artifacts
+end_time: 1740000330546
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: da7d7f59d6cf407eb4860b2480d9520a
+run_name: fun-whale-483
+run_uuid: da7d7f59d6cf407eb4860b2480d9520a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740000322557
+status: 3
+tags: []
+user_id: phant
