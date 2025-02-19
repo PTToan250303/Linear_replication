@@ -17,7 +17,8 @@ from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import euclidean
 
 # Đường dẫn đến thư mục `mlruns/0` của MLflow
-mlflow_folder = 'mlruns/0/'
+mlflow_folder = tempfile.gettempdir() + "/mlruns/0/"
+os.makedirs(mlflow_folder, exist_ok=True)  # Tạo thư mục nếu chưa tồn tại
 
 # Định nghĩa hàm liệt kê các file trong thư mục
 def list_files_in_folder(folder_path, keyword):
@@ -123,7 +124,7 @@ with mlflow.start_run() as run:
 
     # Sử dụng thư mục tạm thời để ghi lại dữ liệu chia tách vào file CSV
     try:
-        with tempfile.TemporaryDirectory(dir=os.getcwd()) as tmpdirname:  # Thêm tham số dir=os.getcwd()
+        with tempfile.TemporaryDirectory() as tmpdirname:  # Thêm tham số dir=os.getcwd()
             st.write(f"Temporary directory created: {tmpdirname}")
 
             train_file = os.path.join(tmpdirname, f"train_data_{run_id}.csv")
