@@ -1,3 +1,5 @@
+import os
+import tempfile
 import pandas as pd
 import streamlit as st
 import plotly.express as px
@@ -13,7 +15,18 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import euclidean
-import os
+
+# Đường dẫn đến thư mục `mlruns/0` của MLflow
+mlflow_folder = 'mlruns/0/'
+
+# Định nghĩa hàm liệt kê các file trong thư mục
+def list_files_in_folder(folder_path, keyword):
+    files = []
+    for root, dirs, file_names in os.walk(folder_path):
+        for file_name in file_names:
+            if keyword in file_name:
+                files.append(os.path.join(root, file_name))
+    return sorted(files, key=os.path.getmtime, reverse=True)
 
 # Đọc dữ liệu
 df = pd.read_csv('titanic.csv')
@@ -85,7 +98,7 @@ for col in columns_to_convert:
         X_valid[col] = X_valid[col].astype('float64')
 
 # Bước 1: Cross Validation trên tập huấn luyện
-model = LogisticRegression()
+model = LogisticRegression(max_iter=500)  # Tăng số lượng iterations
 cv_scores = cross_val_score(model, X_train, Y_train, cv=5, scoring='accuracy')
 st.write("### Cross Validation Results (Training Data)")
 st.write(f"**Accuracy Scores for each fold:** {cv_scores}")
@@ -108,18 +121,19 @@ with mlflow.start_run() as run:
     mlflow.log_param("Test Size", len(X_test))
     mlflow.log_param("random_state", 42)
 
-    # Ghi lại dữ liệu chia tách vào file CSV
-    train_file = f"train_data_{run_id}.csv"
-    valid_file = f"valid_data_{run_id}.csv"
-    test_file = f"test_data_{run_id}.csv"
+    # Sử dụng thư mục tạm thời để ghi lại dữ liệu chia tách vào file CSV
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        train_file = os.path.join(tmpdirname, f"train_data_{run_id}.csv")
+        valid_file = os.path.join(tmpdirname, f"valid_data_{run_id}.csv")
+        test_file = os.path.join(tmpdirname, f"test_data_{run_id}.csv")
 
-    X_train.to_csv(train_file, index=False)
-    X_valid.to_csv(valid_file, index=False)
-    X_test.to_csv(test_file, index=False)
+        X_train.to_csv(train_file, index=False)
+        X_valid.to_csv(valid_file, index=False)
+        X_test.to_csv(test_file, index=False)
 
-    mlflow.log_artifact(train_file)
-    mlflow.log_artifact(valid_file)
-    mlflow.log_artifact(test_file)
+        mlflow.log_artifact(train_file)
+        mlflow.log_artifact(valid_file)
+        mlflow.log_artifact(test_file)
 
     mlflow.log_metric("mse", mse)
     mlflow.log_metric("accuracy", accuracy)
@@ -158,7 +172,7 @@ X_train_poly = poly.fit_transform(X_train)
 X_valid_poly = poly.transform(X_valid)
 X_test_poly = poly.transform(X_test)
 
-poly_reg_model = make_pipeline(PolynomialFeatures(2), LogisticRegression())
+poly_reg_model = make_pipeline(PolynomialFeatures(2), LogisticRegression(max_iter=500))  # Tăng số lượng iterations
 poly_reg_model.fit(X_train_poly, Y_train)
 
 st.write("### Dự Đoán Demo")
@@ -216,33 +230,15 @@ correct_prediction = (int(np.round(prediction[0])) == actual_label)
 st.write(f"**Giá trị thực tế từ tập test: {actual_label}**")
 st.write(f"**Kết quả dự đoán {'ĐÚNG' if correct_prediction else 'SAI'}**")
 
-import os
-
-# Đường dẫn đến thư mục `0` của MLflow
-mlflow_folder = 'mlruns/0/'
-
-# Hàm liệt kê các file trong thư mục
-def list_files_in_folder(folder_path, keyword):
-    files = []
-    for root, dirs, file_names in os.walk(folder_path):
-        for file_name in file_names:
-            if keyword in file_name:
-                files.append(os.path.join(root, file_name))
-    return sorted(files, key=os.path.getmtime, reverse=True)
-
-# Liệt kê các file train, test và validation trong thư mục `0`
-train_files = list_files_in_folder(mlflow_folder, 'train')
-test_files = list_files_in_folder(mlflow_folder, 'test')
-val_files = list_files_in_folder(mlflow_folder, 'val')
-
-# Hiển thị các file trên Streamlit
-st.title('Files in MLflow Folder')
+# Ứng dụng Streamlit: Hiển thị các file lưu trữ từ thư mục `mlruns/0`
+st.title('Files in MLflow Folder 0')
 
 tab1, tab2, tab3 = st.tabs(["Train Files", "Test Files", "Validation Files"])
 
+# Hiển thị các file train
 with tab1:
     st.write("### Train Files")
-    selected_train_file = st.selectbox('Chọn file train để xem:', train_files)
+    selected_train_file = st.selectbox('Chọn file train để xem:', list_files_in_folder('mlruns/0', 'train'))
     if selected_train_file:
         st.write(f'**Nội dung của file {selected_train_file}:**')
         if selected_train_file.endswith('.csv'):
@@ -253,9 +249,10 @@ with tab1:
                 content_train = file.read()
                 st.text(content_train)
 
+# Hiển thị các file test
 with tab2:
     st.write("### Test Files")
-    selected_test_file = st.selectbox('Chọn file test để xem:', test_files)
+    selected_test_file = st.selectbox('Chọn file test để xem:', list_files_in_folder('mlruns/0', 'test'))
     if selected_test_file:
         st.write(f'**Nội dung của file {selected_test_file}:**')
         if selected_test_file.endswith('.csv'):
@@ -266,9 +263,10 @@ with tab2:
                 content_test = file.read()
                 st.text(content_test)
 
+# Hiển thị các file validation
 with tab3:
     st.write("### Validation Files")
-    selected_val_file = st.selectbox('Chọn file validation để xem:', val_files)
+    selected_val_file = st.selectbox('Chọn file validation để xem:', list_files_in_folder('mlruns/0', 'val'))
     if selected_val_file:
         st.write(f'**Nội dung của file {selected_val_file}:**')
         if selected_val_file.endswith('.csv'):

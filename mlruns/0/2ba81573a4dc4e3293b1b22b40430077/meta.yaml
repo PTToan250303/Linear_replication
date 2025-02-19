@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/2ba81573a4dc4e3293b1b22b40430077/artifacts
+end_time: 1739999091629
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2ba81573a4dc4e3293b1b22b40430077
+run_name: puzzled-turtle-928
+run_uuid: 2ba81573a4dc4e3293b1b22b40430077
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739999084122
+status: 3
+tags: []
+user_id: phant

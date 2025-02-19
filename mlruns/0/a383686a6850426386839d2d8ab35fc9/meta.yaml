@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/a383686a6850426386839d2d8ab35fc9/artifacts
+end_time: 1739998259723
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a383686a6850426386839d2d8ab35fc9
+run_name: sincere-turtle-602
+run_uuid: a383686a6850426386839d2d8ab35fc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739998254169
+status: 3
+tags: []
+user_id: phant
