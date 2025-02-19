@@ -17,7 +17,7 @@ from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import euclidean
 
 # Đường dẫn đến thư mục `mlruns/0` của MLflow
-mlflow_folder = tempfile.gettempdir() + "/mlruns/0/"
+mlflow_folder = '/tmp/mlruns/0/'
 os.makedirs(mlflow_folder, exist_ok=True)  # Tạo thư mục nếu chưa tồn tại
 
 # Định nghĩa hàm liệt kê các file trong thư mục
