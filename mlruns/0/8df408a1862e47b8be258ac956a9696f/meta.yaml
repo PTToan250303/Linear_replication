@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/8df408a1862e47b8be258ac956a9696f/artifacts
+end_time: 1739989896358
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8df408a1862e47b8be258ac956a9696f
+run_name: intelligent-bass-556
+run_uuid: 8df408a1862e47b8be258ac956a9696f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989885331
+status: 4
+tags: []
+user_id: phant

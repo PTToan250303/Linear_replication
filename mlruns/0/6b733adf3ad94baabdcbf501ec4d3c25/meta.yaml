@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/6b733adf3ad94baabdcbf501ec4d3c25/artifacts
+end_time: 1739982072214
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6b733adf3ad94baabdcbf501ec4d3c25
+run_name: rambunctious-ox-307
+run_uuid: 6b733adf3ad94baabdcbf501ec4d3c25
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982065695
+status: 4
+tags: []
+user_id: phant

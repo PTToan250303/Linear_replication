@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/71e2f59ea2cf48b782268a3315bfe361/artifacts
+end_time: 1739989905462
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 71e2f59ea2cf48b782268a3315bfe361
+run_name: receptive-cow-591
+run_uuid: 71e2f59ea2cf48b782268a3315bfe361
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989890804
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/c04e6ebc39cc4bef84c91593fb67a512/artifacts
+end_time: 1739989903947
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c04e6ebc39cc4bef84c91593fb67a512
+run_name: learned-deer-354
+run_uuid: c04e6ebc39cc4bef84c91593fb67a512
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989889576
+status: 4
+tags: []
+user_id: phant

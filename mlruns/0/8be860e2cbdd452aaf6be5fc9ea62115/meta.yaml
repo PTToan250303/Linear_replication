@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/8be860e2cbdd452aaf6be5fc9ea62115/artifacts
+end_time: 1739991328706
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8be860e2cbdd452aaf6be5fc9ea62115
+run_name: sassy-pig-297
+run_uuid: 8be860e2cbdd452aaf6be5fc9ea62115
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739991322125
+status: 3
+tags: []
+user_id: phant

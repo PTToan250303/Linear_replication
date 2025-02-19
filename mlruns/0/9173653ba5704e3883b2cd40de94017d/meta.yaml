@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/9173653ba5704e3883b2cd40de94017d/artifacts
+end_time: 1739982098767
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9173653ba5704e3883b2cd40de94017d
+run_name: upset-sheep-519
+run_uuid: 9173653ba5704e3883b2cd40de94017d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982088343
+status: 4
+tags: []
+user_id: phant

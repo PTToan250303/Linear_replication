@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/a2f81e828ba54cdca041ff8ca791fbb0/artifacts
+end_time: 1739982505612
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a2f81e828ba54cdca041ff8ca791fbb0
+run_name: carefree-koi-573
+run_uuid: a2f81e828ba54cdca041ff8ca791fbb0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982490910
+status: 4
+tags: []
+user_id: phant

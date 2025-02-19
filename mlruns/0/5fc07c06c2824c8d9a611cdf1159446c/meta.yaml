@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/5fc07c06c2824c8d9a611cdf1159446c/artifacts
+end_time: 1739778238032
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5fc07c06c2824c8d9a611cdf1159446c
+run_name: capable-sloth-862
+run_uuid: 5fc07c06c2824c8d9a611cdf1159446c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739778227245
+status: 3
+tags: []
+user_id: phant

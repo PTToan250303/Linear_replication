@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/8e16074ef0bc49bbb727faaac3352909/artifacts
+end_time: 1739991617208
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8e16074ef0bc49bbb727faaac3352909
+run_name: thundering-shrew-98
+run_uuid: 8e16074ef0bc49bbb727faaac3352909
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739991610344
+status: 4
+tags: []
+user_id: phant

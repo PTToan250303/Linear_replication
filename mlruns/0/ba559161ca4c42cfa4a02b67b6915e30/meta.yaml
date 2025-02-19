@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/ba559161ca4c42cfa4a02b67b6915e30/artifacts
+end_time: 1739981270041
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ba559161ca4c42cfa4a02b67b6915e30
+run_name: salty-fish-28
+run_uuid: ba559161ca4c42cfa4a02b67b6915e30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739981263878
+status: 4
+tags: []
+user_id: phant

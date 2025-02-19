@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/0214b92e18d34c5e8ea77d3a73636695/artifacts
+end_time: 1739989862463
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0214b92e18d34c5e8ea77d3a73636695
+run_name: awesome-dog-629
+run_uuid: 0214b92e18d34c5e8ea77d3a73636695
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989855436
+status: 4
+tags: []
+user_id: phant

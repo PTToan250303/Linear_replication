@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/fd4fc2cd96ce4ba3aebc11ce3d3920e1/artifacts
+end_time: 1739981234158
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd4fc2cd96ce4ba3aebc11ce3d3920e1
+run_name: rumbling-eel-382
+run_uuid: fd4fc2cd96ce4ba3aebc11ce3d3920e1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739981225967
+status: 3
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/b44f1566ca6f4c29bb60e80c73bf53f3/artifacts
+end_time: 1739982497666
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b44f1566ca6f4c29bb60e80c73bf53f3
+run_name: smiling-grub-745
+run_uuid: b44f1566ca6f4c29bb60e80c73bf53f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982488167
+status: 4
+tags: []
+user_id: phant

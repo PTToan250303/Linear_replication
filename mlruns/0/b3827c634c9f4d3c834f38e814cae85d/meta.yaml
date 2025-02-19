@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/b3827c634c9f4d3c834f38e814cae85d/artifacts
+end_time: 1739983417822
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3827c634c9f4d3c834f38e814cae85d
+run_name: stately-pig-936
+run_uuid: b3827c634c9f4d3c834f38e814cae85d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739983417785
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/9076933c0e8d419d8eaa697bde111fb5/artifacts
+end_time: 1739428672876
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9076933c0e8d419d8eaa697bde111fb5
+run_name: aged-ape-970
+run_uuid: 9076933c0e8d419d8eaa697bde111fb5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739428665029
+status: 3
+tags: []
+user_id: phant

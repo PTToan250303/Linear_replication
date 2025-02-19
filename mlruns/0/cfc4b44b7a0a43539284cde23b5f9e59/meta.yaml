@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/cfc4b44b7a0a43539284cde23b5f9e59/artifacts
+end_time: 1739989867090
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cfc4b44b7a0a43539284cde23b5f9e59
+run_name: legendary-hound-559
+run_uuid: cfc4b44b7a0a43539284cde23b5f9e59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989860001
+status: 4
+tags: []
+user_id: phant

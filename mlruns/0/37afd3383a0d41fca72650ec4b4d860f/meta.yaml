@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/37afd3383a0d41fca72650ec4b4d860f/artifacts
+end_time: 1739982095249
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 37afd3383a0d41fca72650ec4b4d860f
+run_name: clumsy-mouse-226
+run_uuid: 37afd3383a0d41fca72650ec4b4d860f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982084479
+status: 4
+tags: []
+user_id: phant

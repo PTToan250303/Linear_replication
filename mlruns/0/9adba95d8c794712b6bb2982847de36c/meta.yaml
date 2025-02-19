@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/9adba95d8c794712b6bb2982847de36c/artifacts
+end_time: 1739981271769
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9adba95d8c794712b6bb2982847de36c
+run_name: flawless-swan-628
+run_uuid: 9adba95d8c794712b6bb2982847de36c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739981265643
+status: 3
+tags: []
+user_id: phant

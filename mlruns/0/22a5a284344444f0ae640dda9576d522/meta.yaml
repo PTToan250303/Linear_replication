@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/22a5a284344444f0ae640dda9576d522/artifacts
+end_time: 1739982502142
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 22a5a284344444f0ae640dda9576d522
+run_name: upset-bat-709
+run_uuid: 22a5a284344444f0ae640dda9576d522
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982489163
+status: 4
+tags: []
+user_id: phant

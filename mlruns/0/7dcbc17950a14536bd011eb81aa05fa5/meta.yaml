@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/7dcbc17950a14536bd011eb81aa05fa5/artifacts
+end_time: 1739992585184
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7dcbc17950a14536bd011eb81aa05fa5
+run_name: enchanting-roo-535
+run_uuid: 7dcbc17950a14536bd011eb81aa05fa5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739992577948
+status: 3
+tags: []
+user_id: phant

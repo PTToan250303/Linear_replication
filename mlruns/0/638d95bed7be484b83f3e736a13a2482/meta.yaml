@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/638d95bed7be484b83f3e736a13a2482/artifacts
+end_time: 1739982064953
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 638d95bed7be484b83f3e736a13a2482
+run_name: amusing-fly-276
+run_uuid: 638d95bed7be484b83f3e736a13a2482
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982058169
+status: 4
+tags: []
+user_id: phant

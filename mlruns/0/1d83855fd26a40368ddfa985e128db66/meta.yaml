@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/1d83855fd26a40368ddfa985e128db66/artifacts
+end_time: 1739991599480
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d83855fd26a40368ddfa985e128db66
+run_name: angry-colt-260
+run_uuid: 1d83855fd26a40368ddfa985e128db66
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739991592602
+status: 4
+tags: []
+user_id: phant

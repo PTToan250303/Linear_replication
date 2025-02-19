@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/295e415fcc2244e697be4f7e96198e0a/artifacts
+end_time: 1739983061534
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 295e415fcc2244e697be4f7e96198e0a
+run_name: mysterious-bass-894
+run_uuid: 295e415fcc2244e697be4f7e96198e0a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739983056154
+status: 3
+tags: []
+user_id: phant

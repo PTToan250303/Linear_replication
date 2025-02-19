@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/23d716c3f57d4a23b5beeca4a635c62c/artifacts
+end_time: 1739982066406
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23d716c3f57d4a23b5beeca4a635c62c
+run_name: upset-colt-709
+run_uuid: 23d716c3f57d4a23b5beeca4a635c62c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982058461
+status: 4
+tags: []
+user_id: phant

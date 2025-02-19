@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/136017dd448b4dcb8211baa02d3f98cd/artifacts
+end_time: 1739982513172
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 136017dd448b4dcb8211baa02d3f98cd
+run_name: whimsical-hawk-75
+run_uuid: 136017dd448b4dcb8211baa02d3f98cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982508043
+status: 4
+tags: []
+user_id: phant

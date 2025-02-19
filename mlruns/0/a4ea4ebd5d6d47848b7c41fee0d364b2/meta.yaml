@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/a4ea4ebd5d6d47848b7c41fee0d364b2/artifacts
+end_time: 1739982097854
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a4ea4ebd5d6d47848b7c41fee0d364b2
+run_name: adaptable-swan-503
+run_uuid: a4ea4ebd5d6d47848b7c41fee0d364b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982087207
+status: 4
+tags: []
+user_id: phant

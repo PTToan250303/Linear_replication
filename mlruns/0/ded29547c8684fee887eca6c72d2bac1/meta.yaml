@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/ded29547c8684fee887eca6c72d2bac1/artifacts
+end_time: 1739995908971
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ded29547c8684fee887eca6c72d2bac1
+run_name: zealous-lynx-20
+run_uuid: ded29547c8684fee887eca6c72d2bac1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739995901925
+status: 3
+tags: []
+user_id: phant

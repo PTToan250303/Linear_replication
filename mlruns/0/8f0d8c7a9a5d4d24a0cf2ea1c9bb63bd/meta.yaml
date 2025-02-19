@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/8f0d8c7a9a5d4d24a0cf2ea1c9bb63bd/artifacts
+end_time: 1739982097179
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f0d8c7a9a5d4d24a0cf2ea1c9bb63bd
+run_name: chill-hog-405
+run_uuid: 8f0d8c7a9a5d4d24a0cf2ea1c9bb63bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982086989
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/d6ad4e9b21834669bcd8fccd9dfe54a5/artifacts
+end_time: 1739983058543
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d6ad4e9b21834669bcd8fccd9dfe54a5
+run_name: bemused-shrimp-120
+run_uuid: d6ad4e9b21834669bcd8fccd9dfe54a5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739983052837
+status: 4
+tags: []
+user_id: phant

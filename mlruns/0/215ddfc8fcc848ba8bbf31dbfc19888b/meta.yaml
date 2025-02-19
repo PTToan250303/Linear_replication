@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/215ddfc8fcc848ba8bbf31dbfc19888b/artifacts
+end_time: 1739991639919
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 215ddfc8fcc848ba8bbf31dbfc19888b
+run_name: intrigued-lamb-774
+run_uuid: 215ddfc8fcc848ba8bbf31dbfc19888b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739991632915
+status: 3
+tags: []
+user_id: phant

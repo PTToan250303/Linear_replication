@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/b3d4f51c46684487b276ef99976778f8/artifacts
+end_time: 1739992457027
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3d4f51c46684487b276ef99976778f8
+run_name: clean-yak-31
+run_uuid: b3d4f51c46684487b276ef99976778f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739992450023
+status: 3
+tags: []
+user_id: phant

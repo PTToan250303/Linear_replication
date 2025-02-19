@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/a251a84939814ecda150775c40cb6b0b/artifacts
+end_time: 1739982506532
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a251a84939814ecda150775c40cb6b0b
+run_name: marvelous-tern-902
+run_uuid: a251a84939814ecda150775c40cb6b0b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982493138
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/cf30fbe311894b509ecb1825760e4077/artifacts
+end_time: 1739989903570
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cf30fbe311894b509ecb1825760e4077
+run_name: nimble-fawn-196
+run_uuid: cf30fbe311894b509ecb1825760e4077
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739989889138
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/f8cb5cf746ed4e3abb1fa1073b89cde8/artifacts
+end_time: 1739981300469
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f8cb5cf746ed4e3abb1fa1073b89cde8
+run_name: amazing-bug-104
+run_uuid: f8cb5cf746ed4e3abb1fa1073b89cde8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739981294316
+status: 3
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/eb7863e6deb440d1b5a9cc475b58d280/artifacts
+end_time: 1739982095038
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eb7863e6deb440d1b5a9cc475b58d280
+run_name: overjoyed-snail-789
+run_uuid: eb7863e6deb440d1b5a9cc475b58d280
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982084786
+status: 4
+tags: []
+user_id: phant

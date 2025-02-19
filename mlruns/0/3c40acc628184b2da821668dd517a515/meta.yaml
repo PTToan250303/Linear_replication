@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/3c40acc628184b2da821668dd517a515/artifacts
+end_time: 1739982099649
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3c40acc628184b2da821668dd517a515
+run_name: placid-gull-296
+run_uuid: 3c40acc628184b2da821668dd517a515
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982088914
+status: 4
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/113cbb984d8343f7bbbfa706393af98d/artifacts
+end_time: 1739982036969
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 113cbb984d8343f7bbbfa706393af98d
+run_name: capricious-fox-187
+run_uuid: 113cbb984d8343f7bbbfa706393af98d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982029246
+status: 3
+tags: []
+user_id: phant

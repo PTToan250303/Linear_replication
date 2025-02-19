@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/f9a9421fc9bc4246a67336aadd730268/artifacts
+end_time: 1739982506136
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f9a9421fc9bc4246a67336aadd730268
+run_name: loud-kit-675
+run_uuid: f9a9421fc9bc4246a67336aadd730268
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739982490957
+status: 4
+tags: []
+user_id: phant
