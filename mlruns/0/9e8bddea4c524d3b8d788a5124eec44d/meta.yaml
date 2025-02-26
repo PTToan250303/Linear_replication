@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/mlruns/0/9e8bddea4c524d3b8d788a5124eec44d/artifacts
+end_time: 1740005865472
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9e8bddea4c524d3b8d788a5124eec44d
+run_name: skillful-cat-196
+run_uuid: 9e8bddea4c524d3b8d788a5124eec44d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740005856548
+status: 3
+tags: []
+user_id: phant

@@ -1,0 +1,26 @@
+{
+  "dataframe_split": {
+    "columns": [
+      "PassengerId",
+      "Pclass",
+      "Sex",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare",
+      "Embarked"
+    ],
+    "data": [
+      [
+        0.5,
+        0.0,
+        0.0,
+        0.04498617743151546,
+        0.0,
+        0.3333333333333333,
+        0.15977676072337862,
+        0.0
+      ]
+    ]
+  }
+}
