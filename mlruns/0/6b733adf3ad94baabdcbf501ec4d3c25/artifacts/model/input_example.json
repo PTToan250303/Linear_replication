@@ -1,1 +1,0 @@
-{"columns": ["PassengerId", "Survived", "Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"], "data": [[446.0, 1.0, 1.0, 0.0, 4.0, 0.0, 2.0, 81.8583]]}
