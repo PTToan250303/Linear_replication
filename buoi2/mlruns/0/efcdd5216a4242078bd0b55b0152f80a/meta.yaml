@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/efcdd5216a4242078bd0b55b0152f80a/artifacts
+end_time: 1741202657439
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: efcdd5216a4242078bd0b55b0152f80a
+run_name: skittish-skink-53
+run_uuid: efcdd5216a4242078bd0b55b0152f80a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741202498410
+status: 4
+tags: []
+user_id: phant

@@ -74,55 +74,6 @@ def choose_label(df):
     
     return X, y
 
-def train_test_size():
-    if "df" not in st.session_state:
-        st.error("❌ Dữ liệu chưa được tải lên!")
-        st.stop()
-    
-    df = st.session_state.df  # Lấy dữ liệu từ session_stat
-    X, y = choose_label(df)
-    
-    st.subheader("📊 Chia dữ liệu Train - Validation - Test")   
-    
-    test_size = st.slider("📌 Chọn % dữ liệu Test", 0, 100, 20)
-    remaining_size = 100 - test_size
-    val_size = st.slider("📌 Chọn % dữ liệu Validation (trong phần Train)", 0, 100, 15)
-
-    st.write(f"📌 **Tỷ lệ phân chia:** Test={test_size}%, Validation={val_size}%, Train={remaining_size - val_size}%")
-
-    
-
-    if st.button("✅ Xác nhận Chia"):
-        # st.write("⏳ Đang chia dữ liệu...")
-
-        stratify_option = y if y.nunique() > 1 else None
-        X_train_full, X_test, y_train_full, y_test = train_test_split(
-            X, y, test_size=test_size/100, stratify=stratify_option, random_state=42
-        )
-
-        stratify_option = y_train_full if y_train_full.nunique() > 1 else None
-        X_train, X_val, y_train, y_val = train_test_split(
-            X_train_full, y_train_full, test_size=val_size / (100 - test_size),
-            stratify=stratify_option, random_state=42
-        )
-
-        # Lưu vào session_state
-        st.session_state.X_train = X_train
-        st.session_state.X_test = X_test
-        st.session_state.y_train = y_train
-        st.session_state.y_test = y_test
-        st.session_state.y = y
-        st.session_state.X_train_shape = X_train.shape[0]
-        st.session_state.X_val_shape = X_val.shape[0]
-        st.session_state.X_test_shape = X_test.shape[0]
-        summary_df = pd.DataFrame({
-            "Tập dữ liệu": ["Train", "Validation", "Test"],
-            "Số lượng mẫu": [X_train.shape[0], X_val.shape[0], X_test.shape[0]]
-        })
-
-        # **Log dữ liệu vào MLflow**
-        
-
        
 def xu_ly_gia_tri_thieu(df):
     if "df" not in st.session_state:
@@ -238,7 +189,7 @@ def chuyen_doi_kieu_du_lieu(df):
 
 
 def chuan_hoa_du_lieu(df):
-    # st.subheader("📊 Chuẩn hóa dữ liệu với StandardScaler")
+    # st.subheader("📊 Chuẩn hóa dữ liệu với SMinMaxScaler")
 
     # Lọc tất cả các cột số
     numerical_cols = df.select_dtypes(include=['number']).columns.tolist()
@@ -307,7 +258,58 @@ def hien_thi_ly_thuyet(df):
     st.subheader("4️⃣ Chuẩn hóa dữ liệu số")
  
     df=chuan_hoa_du_lieu(df)
+def train_test_size():
+    if "df" not in st.session_state:
+        st.error("❌ Dữ liệu chưa được tải lên!")
+        st.stop()
     
+    df = st.session_state.df  # Lấy dữ liệu từ session_stat
+    X, y = choose_label(df)
+    
+    st.subheader("📊 Chia dữ liệu Train - Validation - Test")   
+    
+    test_size = st.slider("📌 Chọn % dữ liệu Test", 10, 50, 20)
+    remaining_size = 100 - test_size
+    val_size = st.slider("📌 Chọn % dữ liệu Validation (trong phần Train)", 0, 50, 15)
+
+    st.write(f"📌 **Tỷ lệ phân chia:** Test={test_size}%, Validation={val_size}%, Train={remaining_size - val_size}%")
+
+    
+
+    if st.button("✅ Xác nhận Chia"):
+        # st.write("⏳ Đang chia dữ liệu...")
+
+        stratify_option = y if y.nunique() > 1 else None
+        X_train_full, X_test, y_train_full, y_test = train_test_split(
+            X, y, test_size=test_size/100, stratify=stratify_option, random_state=42
+        )
+
+        stratify_option = y_train_full if y_train_full.nunique() > 1 else None
+        X_train, X_val, y_train, y_val = train_test_split(
+            X_train_full, y_train_full, test_size=val_size / (100 - test_size),
+            stratify=stratify_option, random_state=42
+        )
+
+        # st.write(f"📊 Kích thước tập Train: {X_train.shape[0]} mẫu")
+        # st.write(f"📊 Kích thước tập Validation: {X_val.shape[0]} mẫu")
+        # st.write(f"📊 Kích thước tập Test: {X_test.shape[0]} mẫu")
+
+        # Lưu vào session_state
+        st.session_state.X_train = X_train
+        st.session_state.X_test = X_test
+        st.session_state.y_train = y_train
+        st.session_state.y_test = y_test
+        st.session_state.y = y
+        st.session_state.X_train_shape = X_train.shape[0]
+        st.session_state.X_val_shape = X_val.shape[0]
+        st.session_state.X_test_shape = X_test.shape[0]
+        summary_df = pd.DataFrame({
+            "Tập dữ liệu": ["Train", "Validation", "Test"],
+            "Số lượng mẫu": [X_train.shape[0], X_val.shape[0], X_test.shape[0]]
+        })
+        st.table(summary_df)
+
+        # **Log dữ liệu vào MLflow**    
 def chia():
     st.subheader("Chia dữ liệu thành tập Train, Validation, và Test")
     st.write("""
@@ -318,9 +320,9 @@ def chia():
     - **Test(%)**: để test, đánh giá hiệu suất thực tế.
     """)
     train_test_size()
-    
-    
 
+from sklearn.pipeline import make_pipeline   
+from sklearn.model_selection import train_test_split, cross_val_score
 
 def train_multiple_linear_regression(X_train, y_train, learning_rate=0.001, n_iterations=200):
     """Huấn luyện hồi quy tuyến tính bội bằng Gradient Descent."""
@@ -407,196 +409,282 @@ def train_polynomial_regression(X_train, y_train, degree=2, learning_rate=0.001,
 
 
 
-# Hàm chọn mô hình
+
 def chon_mo_hinh():
     st.subheader("🔍 Chọn mô hình hồi quy")
-    
+
     model_type_V = st.radio("Chọn loại mô hình:", ["Multiple Linear Regression", "Polynomial Regression"])
     model_type = "linear" if model_type_V == "Multiple Linear Regression" else "polynomial"
-    
+
     n_folds = st.slider("Chọn số folds (KFold Cross-Validation):", min_value=2, max_value=10, value=5)
     learning_rate = st.slider("Chọn tốc độ học (learning rate):", 
-                          min_value=1e-6, max_value=0.1, value=0.01, step=1e-6, format="%.6f")
+                              min_value=1e-6, max_value=0.1, value=0.01, step=1e-6, format="%.6f")
 
     degree = 2
     if model_type == "polynomial":
         degree = st.slider("Chọn bậc đa thức:", min_value=2, max_value=5, value=2)
 
-    fold_mse = []
-    scaler = MinMaxScaler()
     kf = KFold(n_splits=n_folds, shuffle=True, random_state=42)
 
     if "X_train" not in st.session_state or st.session_state.X_train is None:
         st.warning("⚠️ Vui lòng chia dữ liệu trước khi huấn luyện mô hình!")
-        return None, None, None
+        return None, None
 
     X_train, X_test = st.session_state.X_train, st.session_state.X_test
     y_train, y_test = st.session_state.y_train, st.session_state.y_test
-    
-    mlflow_input()
-    
-    # Lưu vào session_state để không bị mất khi cập nhật UI
-    run_name = st.text_input("🔹 Nhập tên Run:", "Default_Run")  # Tên run cho MLflow
-    st.session_state["run_name"] = run_name if run_name else "default_run"
-    
-    if st.button("Huấn luyện mô hình"):
-        # 🎯 **Tích hợp MLflow**
-        
+    df = st.session_state.df  # Lấy toàn bộ dataset
 
+    # 🔹 **Khởi tạo giá trị mặc định cho 'run_name' nếu chưa có**
+    if "run_name" not in st.session_state:
+        st.session_state["run_name"] = "default_run"
+
+    run_name = st.text_input("🔹 Nhập tên Run:", st.session_state["run_name"])
+    st.session_state["run_name"] = run_name if run_name else "default_run"
+
+    if st.button("Huấn luyện mô hình"):
         with mlflow.start_run(run_name=f"Train_{st.session_state['run_name']}"):
-            df = st.session_state.df
+            # 🌟 **Lưu thông tin dữ liệu vào MLflow**
             mlflow.log_param("dataset_shape", df.shape)
             mlflow.log_param("target_column", st.session_state.y.name)
-            mlflow.log_param("test_size", st.session_state.X_test_shape)
-            mlflow.log_param("validation_size", st.session_state.X_val_shape)
             mlflow.log_param("train_size", st.session_state.X_train_shape)
+            mlflow.log_param("validation_size", st.session_state.X_val_shape)
+            mlflow.log_param("test_size", st.session_state.X_test_shape)
 
-            # Lưu dataset tạm thời
+            # 🌟 **Lưu dataset lên MLflow**
             dataset_path = "dataset.csv"
             df.to_csv(dataset_path, index=False)
-
-            # Log dataset lên MLflow
             mlflow.log_artifact(dataset_path)
 
-
+            # 🌟 **Lưu tham số mô hình vào MLflow**
             mlflow.log_param("model_type", model_type)
             mlflow.log_param("n_folds", n_folds)
             mlflow.log_param("learning_rate", learning_rate)
             if model_type == "polynomial":
                 mlflow.log_param("degree", degree)
 
-            for fold, (train_idx, valid_idx) in enumerate(kf.split(X_train, y_train)):
+            fold_mse = []
+            best_model = None
+
+            for train_idx, valid_idx in kf.split(X_train, y_train):
                 X_train_fold, X_valid = X_train.iloc[train_idx], X_train.iloc[valid_idx]
                 y_train_fold, y_valid = y_train.iloc[train_idx], y_train.iloc[valid_idx]
 
                 if model_type == "linear":
-                    w = train_multiple_linear_regression(X_train_fold, y_train_fold, learning_rate=learning_rate)
-                    w = np.array(w).reshape(-1, 1)
-                    X_valid_b = np.c_[np.ones((len(X_valid), 1)), X_valid.to_numpy()]
-                    y_valid_pred = X_valid_b.dot(w)
+                    model = LinearRegression()
+                    model.fit(X_train_fold, y_train_fold)
+                    y_valid_pred = model.predict(X_valid)
                 else:  
-                    X_train_fold = scaler.fit_transform(X_train_fold)
-                    w = train_polynomial_regression(X_train_fold, y_train_fold, degree, learning_rate=learning_rate)
-                    w = np.array(w).reshape(-1, 1)
-                    X_valid_scaled = scaler.transform(X_valid.to_numpy())
-                    X_valid_poly = np.hstack([X_valid_scaled] + [X_valid_scaled**d for d in range(2, degree + 1)])
-                    X_valid_b = np.c_[np.ones((len(X_valid_poly), 1)), X_valid_poly]
-                    y_valid_pred = X_valid_b.dot(w)
+                    poly_features = PolynomialFeatures(degree=degree)
+                    X_train_poly = poly_features.fit_transform(X_train_fold)
+                    X_valid_poly = poly_features.transform(X_valid)
+
+                    model = LinearRegression()
+                    model.fit(X_train_poly, y_train_fold)
+                    y_valid_pred = model.predict(X_valid_poly)
 
                 mse = mean_squared_error(y_valid, y_valid_pred)
                 fold_mse.append(mse)
-                mlflow.log_metric(f"mse_fold_{fold+1}", mse)
-                print(f"📌 Fold {fold + 1} - MSE: {mse:.4f}")
 
             avg_mse = np.mean(fold_mse)
+            mlflow.log_metric("avg_mse", avg_mse)  # 🌟 Lưu MSE trung bình vào MLflow
 
+            # Huấn luyện mô hình trên toàn bộ tập train
             if model_type == "linear":
-                final_w = train_multiple_linear_regression(X_train, y_train, learning_rate=learning_rate)
-                st.session_state['linear_model'] = final_w
-                X_test_b = np.c_[np.ones((len(X_test), 1)), X_test.to_numpy()]
-                y_test_pred = X_test_b.dot(final_w)
+                final_model = LinearRegression()
+                final_model.fit(X_train, y_train)
+                st.session_state['linear_model'] = final_model
             else:
-                X_train_scaled = scaler.fit_transform(X_train)
-                final_w = train_polynomial_regression(X_train_scaled, y_train, degree, learning_rate=learning_rate)
-                st.session_state['polynomial_model'] = final_w
-                X_test_scaled = scaler.transform(X_test.to_numpy())
-                X_test_poly = np.hstack([X_test_scaled] + [X_test_scaled**d for d in range(2, degree + 1)])
-                X_test_b = np.c_[np.ones((len(X_test_poly), 1)), X_test_poly]
-                y_test_pred = X_test_b.dot(final_w)
+                poly_features = PolynomialFeatures(degree=degree)
+                X_train_poly = poly_features.fit_transform(X_train)
 
+                final_model = LinearRegression()
+                final_model.fit(X_train_poly, y_train)
+
+                # Lưu mô hình và PolynomialFeatures vào session_state
+                st.session_state['polynomial_model'] = final_model
+                st.session_state['poly_features'] = poly_features
+
+            # 🌟 **Tính toán MSE trên tập Train & Test**
+            if model_type == "linear":
+                y_train_pred = final_model.predict(X_train)
+                y_test_pred = final_model.predict(X_test)
+            else:
+                X_test_poly = poly_features.transform(X_test)
+                y_train_pred = final_model.predict(X_train_poly)
+                y_test_pred = final_model.predict(X_test_poly)
+
+            train_mse = mean_squared_error(y_train, y_train_pred)
             test_mse = mean_squared_error(y_test, y_test_pred)
 
-            # 📌 **Log các giá trị vào MLflow**
-            mlflow.log_metric("avg_mse", avg_mse)
-            mlflow.log_metric("test_mse", test_mse)
+            mlflow.log_metric("train_mse", train_mse)  # 🌟 Lưu MSE train
+            mlflow.log_metric("test_mse", test_mse)    # 🌟 Lưu MSE test
 
-            # Kết thúc run
-            mlflow.end_run()
-            
             st.success(f"MSE trung bình qua các folds: {avg_mse:.4f}")
+            st.success(f"MSE trên tập train: {train_mse:.4f}")
             st.success(f"MSE trên tập test: {test_mse:.4f}")
-            st.success(f"✅ Đã log dữ liệu cho **Train_{st.session_state['run_name']}**!")
-            st.markdown(f"### 🔗 [Truy cập MLflow DAGsHub]({st.session_state['mlflow_url']})")
 
-        return final_w, avg_mse, scaler
+        return final_model, avg_mse, test_mse
 
     return None, None, None
+
+
+
+import numpy as np
+import streamlit as st
 
 def test():
     # Kiểm tra xem mô hình đã được lưu trong session_state chưa
     model_type = st.selectbox("Chọn mô hình:", ["linear", "polynomial"])
-
+    
     if model_type == "linear" and "linear_model" in st.session_state:
         model = st.session_state["linear_model"]
     elif model_type == "polynomial" and "polynomial_model" in st.session_state:
         model = st.session_state["polynomial_model"]
+        poly_features = st.session_state.get("poly_features", None)
+        if poly_features is None:
+            st.error("Không tìm thấy poly_features trong session_state")
+            return
     else:
         st.warning("Mô hình chưa được huấn luyện.")
         return
-
-    # Nhập các giá trị cho các cột của X_train
+    
+    # Lấy dữ liệu huấn luyện
     X_train = st.session_state.X_train
-    
-    st.write(X_train.head()) 
-    
-    # Đảm bảo bạn dùng session_state
-    num_columns = len(X_train.columns)
     column_names = X_train.columns.tolist()
-
-    st.write(f"Nhập các giá trị cho {num_columns} cột của X_train:")
-
-    # Tạo các trường nhập liệu cho từng cột
+    
+    # Nhập giá trị từ người dùng
     X_train_input = []
-    binary_columns = [] 
-    # Kiểm tra nếu có dữ liệu mapping_dicts trong session_state
-    if "mapping_dicts" not in st.session_state:
-        st.session_state.mapping_dicts = []
-
-    # Duyệt qua các cột và kiểm tra nếu có thông tin chuyển đổi
     for i, column_name in enumerate(column_names):
-        # Kiểm tra xem cột có nằm trong mapping_dicts không
-        mapping_dict = None
-        for column_info in st.session_state.mapping_dicts:
-            if column_info["column_name"] == column_name:
-                mapping_dict = column_info["mapping_dict"]
-                break
-
-        if mapping_dict:  # Nếu có mapping_dict, hiển thị dropdown với các giá trị thay thế
-            value = st.selectbox(f"Giá trị cột {column_name}", options=list(mapping_dict.keys()), key=f"column_{i}")
-            value = int(mapping_dict[value])
-        else:  # Nếu không có mapping_dict, yêu cầu người dùng nhập số
-            value = st.number_input(f"Giá trị cột {column_name}", key=f"column_{i}")
-        
+        value = st.number_input(f"Giá trị cột {column_name}", key=f"column_{i}")
         X_train_input.append(value)
     
-    # Chuyển đổi list thành array
     X_train_input = np.array(X_train_input).reshape(1, -1)
-
-    # Sao chép X_train_input để thay đổi giá trị không làm ảnh hưởng đến dữ liệu gốc
-    X_train_input_final = X_train_input.copy()  
-    scaler = MinMaxScaler()
-
-    # Tạo mảng chỉ số của các phần tử khác 0 và 1
-    for i in range(X_train_input.shape[1]):
-        if X_train_input[0, i] != 0 and X_train_input[0, i] != 1:  # Nếu giá trị không phải 0 hoặc 1
-            # Chuẩn hóa giá trị
-            X_train_input_final[0, i] = scaler.fit_transform(X_train_input[:, i].reshape(-1, 1)).flatten()
-        
-    st.write("Dữ liệu sau khi xử lý:")
-    st.write(X_train_input_final)
-
+    
+    # Xử lý với polynomial model
+    if model_type == "polynomial":
+        X_train_input = poly_features.transform(X_train_input)
+    
+    # Dự đoán kết quả
     if st.button("Dự đoán"):
-        # Thêm cột 1 cho intercept (nếu cần)
-        X_input_b = np.c_[np.ones((X_train_input_final.shape[0], 1)), X_train_input_final]
+        y_pred = model.predict(X_train_input)
         
-        # Dự đoán với mô hình đã lưu
-        y_pred = X_input_b.dot(model)  # Dự đoán với mô hình đã lưu
+        prediction_label = "Sống 🟢" if y_pred[0] >= 0.5 else "Chết 🔴"
+        st.write(f"Dự đoán: {prediction_label}")
         
-        # Hiển thị kết quả dự đoán
-        if y_pred >= 0.5:
-            st.write("Dự đoán sống 🎈")        
+        y_train = st.session_state.y_train
+        y_mean = np.mean(y_train)
+        
+        # Kiểm tra tránh lỗi chia cho 0
+        if y_mean != 0:
+            reliability = max(0, 1 - abs(y_pred[0] - y_mean) / y_mean) * 100
+            st.write(f"🔍 Độ tin cậy: {reliability:.2f}%")
         else:
-            st.write("Dự đoán chết 💀")
+            st.write("🔍 Không thể tính độ tin cậy vì y_mean = 0")
+
+            
+            
+import streamlit as st
+import mlflow
+import os
+
+import streamlit as st
+import mlflow
+import os
+import pandas as pd
+from datetime import datetime
+def show_experiment_selector():
+    st.title("📊 MLflow Experiments - DAGsHub")
+
+    # Kết nối với DAGsHub MLflow Tracking
+    
+    # Lấy danh sách tất cả experiments
+    experiment_name = "Linear_replication"
+    
+    # Tìm experiment theo tên
+    experiments = mlflow.search_experiments()
+    selected_experiment = next((exp for exp in experiments if exp.name == experiment_name), None)
+
+    if not selected_experiment:
+        st.error(f"❌ Experiment '{experiment_name}' không tồn tại!")
+        return
+
+    st.subheader(f"📌 Experiment: {experiment_name}")
+    st.write(f"**Experiment ID:** {selected_experiment.experiment_id}")
+    st.write(f"**Trạng thái:** {'Active' if selected_experiment.lifecycle_stage == 'active' else 'Deleted'}")
+    st.write(f"**Vị trí lưu trữ:** {selected_experiment.artifact_location}")
+
+    # Lấy danh sách runs trong experiment
+    runs = mlflow.search_runs(experiment_ids=[selected_experiment.experiment_id])
+
+    if runs.empty:
+        st.warning("⚠ Không có runs nào trong experiment này.")
+        return
+
+    st.write("### 🏃‍♂️ Các Runs gần đây:")
+
+    # Lấy danh sách run_name từ params
+    run_info = []
+    for _, run in runs.iterrows():
+        run_id = run["run_id"]
+        run_params = mlflow.get_run(run_id).data.params
+        run_name = run_params.get("run_name", f"Run {run_id[:8]}")  # Nếu không có run_name thì lấy run_id
+        run_info.append((run_name, run_id))
+
+    # Tạo dictionary để map run_name -> run_id
+    run_name_to_id = dict(run_info)
+    run_names = list(run_name_to_id.keys())
+
+    # Chọn run theo run_name
+    selected_run_name = st.selectbox("🔍 Chọn một run:", run_names)
+    selected_run_id = run_name_to_id[selected_run_name]
+
+    # Hiển thị thông tin chi tiết của run được chọn
+    selected_run = mlflow.get_run(selected_run_id)
+
+    if selected_run:
+        st.subheader(f"📌 Thông tin Run: {selected_run_name}")
+        st.write(f"**Run ID:** {selected_run_id}")
+        st.write(f"**Trạng thái:** {selected_run.info.status}")
+        start_time_ms = selected_run.info.start_time  # Thời gian lưu dưới dạng milliseconds
+
+# Chuyển sang định dạng ngày giờ dễ đọc
+        if start_time_ms:
+            start_time = datetime.fromtimestamp(start_time_ms / 1000).strftime("%Y-%m-%d %H:%M:%S")
+        else:
+            start_time = "Không có thông tin"
+
+        st.write(f"**Thời gian chạy:** {start_time}")
+
+        # Hiển thị thông số đã log
+        params = selected_run.data.params
+        metrics = selected_run.data.metrics
+
+        if params:
+            st.write("### ⚙️ Parameters:")
+            st.json(params)
+
+        if metrics:
+            st.write("### 📊 Metrics:")
+            st.json(metrics)
+
+        # Kiểm tra và hiển thị dataset artifact
+        dataset_path = f"{selected_experiment.artifact_location}/{selected_run_id}/artifacts/dataset.csv"
+        st.write("### 📂 Dataset:")
+        st.write(f"📥 [Tải dataset]({dataset_path})")
+    else:
+        st.warning("⚠ Không tìm thấy thông tin cho run này.")
+
+
+
+
+          
+def chon():
+    try:
+                
+        final_w, avg_mse, test_mse = chon_mo_hinh()
+    except Exception as e:
+        st.error(f"Lỗi xảy ra: {e}")
+
 
 def data(df):
     """Hiển thị dữ liệu đã tải lên"""
@@ -698,10 +786,9 @@ def show_experiment_selector():
         st.warning("⚠ Không tìm thấy thông tin cho run này.")
 def chon():
     try:
-                
         final_w, avg_mse, scaler = chon_mo_hinh()
     except Exception as e:
-        st.error(f"Lỗi xảy ra: {e}")
+        st.error(f"❌ Lỗi khi chọn mô hình: {e}")
 def Classification():
     # Định dạng tiêu đề
     st.markdown("""
@@ -722,8 +809,7 @@ def Classification():
             border: 1px solid #ddd;
         }
         </style>
-        <div class="title">Khái phá dữ liệu</div>
-        <div class="subtitle">Linear Regression</div>
+        <div class="title">Linear Regression</div>
         <hr>
     """, unsafe_allow_html=True)
 

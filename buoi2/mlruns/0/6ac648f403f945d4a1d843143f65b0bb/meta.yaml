@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/6ac648f403f945d4a1d843143f65b0bb/artifacts
+end_time: 1741201712640
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6ac648f403f945d4a1d843143f65b0bb
+run_name: youthful-hare-633
+run_uuid: 6ac648f403f945d4a1d843143f65b0bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741201620740
+status: 4
+tags: []
+user_id: phant

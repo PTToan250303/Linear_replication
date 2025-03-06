@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/906bbbddce4546bc89aa80fa3ce8bee3/artifacts
+end_time: 1741201352300
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 906bbbddce4546bc89aa80fa3ce8bee3
+run_name: powerful-grouse-695
+run_uuid: 906bbbddce4546bc89aa80fa3ce8bee3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741201139743
+status: 4
+tags: []
+user_id: phant

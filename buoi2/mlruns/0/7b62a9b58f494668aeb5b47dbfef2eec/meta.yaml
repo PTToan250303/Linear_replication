@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/7b62a9b58f494668aeb5b47dbfef2eec/artifacts
+end_time: 1741202498374
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7b62a9b58f494668aeb5b47dbfef2eec
+run_name: monumental-elk-856
+run_uuid: 7b62a9b58f494668aeb5b47dbfef2eec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741202100379
+status: 3
+tags: []
+user_id: phant

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/ed8c454fe4704c2c9a0bc6ced63118f8/artifacts
+end_time: 1741202100347
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed8c454fe4704c2c9a0bc6ced63118f8
+run_name: unequaled-crow-935
+run_uuid: ed8c454fe4704c2c9a0bc6ced63118f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741201620807
+status: 3
+tags: []
+user_id: phant

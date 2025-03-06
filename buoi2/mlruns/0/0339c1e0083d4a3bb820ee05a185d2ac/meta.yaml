@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/CNTT/HocMay/Mlflow_titanic/buoi2/mlruns/0/0339c1e0083d4a3bb820ee05a185d2ac/artifacts
+end_time: 1741201660380
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0339c1e0083d4a3bb820ee05a185d2ac
+run_name: aged-worm-962
+run_uuid: 0339c1e0083d4a3bb820ee05a185d2ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741201352120
+status: 4
+tags: []
+user_id: phant
